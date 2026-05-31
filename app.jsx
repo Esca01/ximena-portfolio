@@ -44,24 +44,29 @@ function Dab({ color="#C5552F", i=0, style, className="" }){
 /* ---------------- NAV ---------------- */
 function Nav({ t, lang, setLang }){
   const [scrolled, setScrolled] = useState(false);
+  const [menu, setMenu] = useState(false);
   useEffect(()=>{
     const f = ()=> setScrolled(window.scrollY > 40);
     f(); window.addEventListener("scroll", f, {passive:true});
     return ()=> window.removeEventListener("scroll", f);
   },[]);
+  const close = ()=> setMenu(false);
   return (
-    <nav className={"nav"+(scrolled?" scrolled":"")}>
-      <a href="#top" className="brand">
+    <nav className={"nav"+(scrolled?" scrolled":"")+(menu?" menu-open":"")}>
+      <a href="#top" className="brand" onClick={close}>
         <Dab color={PAL["--terracotta"]} i={0} style={{width:14,height:14}}/>
         {t.hero.first} <span style={{color:"var(--ink-faint)",fontWeight:400}}>{t.hero.last}</span>
       </a>
-      <div className="nav-links">
-        <a href="#about">{t.nav.about}</a>
-        <a href="#work">{t.nav.work}</a>
-        <a href="#skills">{t.nav.skills}</a>
-        <a href="#edu">{t.nav.edu}</a>
-        <a href="#contact">{t.nav.contact}</a>
-        <a href="cv.html" className="cv-btn">{t.nav.cv} <span>↓</span></a>
+      <button className="menu-btn" aria-label="Menú" aria-expanded={menu} onClick={()=>setMenu(m=>!m)}>
+        <span></span><span></span><span></span>
+      </button>
+      <div className={"nav-links"+(menu?" open":"")}>
+        <a href="#about" onClick={close}>{t.nav.about}</a>
+        <a href="#work" onClick={close}>{t.nav.work}</a>
+        <a href="#skills" onClick={close}>{t.nav.skills}</a>
+        <a href="#edu" onClick={close}>{t.nav.edu}</a>
+        <a href="#contact" onClick={close}>{t.nav.contact}</a>
+        <a href="cv.html" className="cv-btn" onClick={close}>{t.nav.cv} <span>↓</span></a>
         <div className="lang">
           <button className={lang==="es"?"on":""} onClick={()=>setLang("es")}>ES</button>
           <button className={lang==="en"?"on":""} onClick={()=>setLang("en")}>EN</button>
