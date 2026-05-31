@@ -1,5 +1,11 @@
 const { useState, useEffect, useRef } = React;
 
+function readableOn(hex){
+  const c=hex.replace('#','');
+  const r=parseInt(c.substr(0,2),16),g=parseInt(c.substr(2,2),16),b=parseInt(c.substr(4,2),16);
+  return (0.2126*r+0.7152*g+0.0722*b)/255>0.62?'var(--ink)':'#fff';
+}
+
 /* apply saved appearance (fonts + palette) + theme before render */
 window.XM.applyAppearance();
 window.XM.applyTheme();
@@ -183,7 +189,7 @@ function Job({ job, idx, t, color }){
           <h3>{job.role}</h3>
           <div className="company">{job.company}</div>
           <div className="dates">{job.dates}</div>
-          {job.badge && <span className="badge">{job.badge}</span>}
+          {job.badge && <span className="badge" style={{color:readableOn(color)}}>{job.badge}</span>}
         </div>
         <div className="detail">
           <p className="summary">{job.summary}</p>
