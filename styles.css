@@ -13,7 +13,7 @@
   --paper-deep:   #E6D9C2;
   --ink:          #241F1A;
   --ink-soft:     #4A423A;
-  --ink-faint:    #8C8275;
+  --ink-faint:    #676051;
 
   /* --- Paleta de óleos --- */
   --terracotta:   #C5552F;
@@ -50,7 +50,7 @@ html[data-theme="dark"]{
   --paper-deep:   #2A231C;
   --ink:          #F1E8DA;
   --ink-soft:     #C2B5A2;
-  --ink-faint:    #8C8072;
+  --ink-faint:    #A09180;
   --line:         rgba(241,232,218,.16);
   --line-soft:    rgba(241,232,218,.08);
 }
