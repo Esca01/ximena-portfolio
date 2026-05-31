@@ -347,7 +347,7 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
 /* ======================================================
    SKILLS / DIGITAL
    ====================================================== */
-.skills-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,80px); align-items:start; }
+.skills-grid{ display:grid; grid-template-columns:1fr; gap:clamp(28px,4vw,48px); align-items:start; }
 .skill-block h4{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:24px; display:flex; align-items:center; gap:10px; }
 .skill-block h4 .dab{ width:13px; height:13px; }
 .meter{ margin-bottom:22px; }
