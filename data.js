@@ -126,7 +126,7 @@ window.DATA = {
       num:"07", title:"Trabajemos", titleEm:"juntos",
       rows:[
         { k:"Correo", v:"ximecordoba17@gmail.com", href:"mailto:ximecordoba17@gmail.com" },
-        { k:"Celular", v:"(+57) 313 688 2415", href:"tel:+573136882415" },
+        { k:"Celular", v:"(+57) 313 688 2415", href:"https://wa.me/573136882415" },
         { k:"LinkedIn", v:"@ximena-a-cordoba-castro", href:"https://www.linkedin.com/in/ximena-a-cordoba-castro" },
         { k:"Ubicación", v:"Dosquebradas, Colombia", href:"" },
       ],
@@ -258,7 +258,7 @@ window.DATA = {
       num:"07", title:"Let's work", titleEm:"together",
       rows:[
         { k:"Email", v:"ximecordoba17@gmail.com", href:"mailto:ximecordoba17@gmail.com" },
-        { k:"Phone", v:"(+57) 313 688 2415", href:"tel:+573136882415" },
+        { k:"Phone", v:"(+57) 313 688 2415", href:"https://wa.me/573136882415" },
         { k:"LinkedIn", v:"@ximena-a-cordoba-castro", href:"https://www.linkedin.com/in/ximena-a-cordoba-castro" },
         { k:"Location", v:"Dosquebradas, Colombia", href:"" },
       ],

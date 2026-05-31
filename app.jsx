@@ -151,7 +151,6 @@ function Hero({ t }){
           </div>
         </div>
       </div>
-      <div className="scroll-hint"><span className="ln"></span>{t.hero.scroll}</div>
     </header>
   );
 }
@@ -359,20 +358,46 @@ function Hobbies({ t }){
 }
 
 /* ---------------- CONTACT ---------------- */
+function ContactIcon({ href }){
+  if(/wa\.me|whatsapp|^tel:/i.test(href)) return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.38c-.29-.15-1.73-.85-2-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.14-.17.2-.34.22-.63.08-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.49-.66-.5h-.56c-.2 0-.51.07-.78.37-.27.29-1.03 1.01-1.03 2.46s1.06 2.85 1.2 3.05c.15.2 2.08 3.18 5.04 4.46.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.12.57-.09 1.73-.71 1.98-1.39.24-.69.24-1.27.17-1.39-.07-.12-.26-.2-.55-.34zM12 2a10 10 0 0 0-8.52 15.26L2 22l4.85-1.46A10 10 0 1 0 12 2zm0 18.2a8.16 8.16 0 0 1-4.16-1.14l-.3-.18-2.88.86.85-2.8-.2-.31A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  );
+  if(/linkedin/i.test(href)) return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.83v1.71h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.81 0-2.08 1.4-2.08 2.85V21H9z"/></svg>
+  );
+  if(/^mailto:/i.test(href)) return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2L12 12.6 19.6 7H4.4zM20 8.5l-8 5.2-8-5.2V18h16V8.5z"/></svg>
+  );
+  return <span className="arrow">↗</span>;
+}
+function contactLabel(href, k){
+  if(/wa\.me|whatsapp|^tel:/i.test(href)) return "WhatsApp";
+  if(/linkedin/i.test(href)) return "LinkedIn";
+  if(/^mailto:/i.test(href)) return "Correo";
+  return k;
+}
 function Contact({ t }){
+  const links = t.contact.rows.filter(r=>r.href);
+  const plain = t.contact.rows.filter(r=>!r.href);
   return (
     <section className="section contact" id="contact">
       <div className="wrap">
         <div className="eyebrow reveal"><span className="num">{t.contact.num}</span> {t.contact.title}</div>
         <h2 className="big reveal reveal-d1" style={{marginTop:24}}>{t.contact.title} <em>{t.contact.titleEm}</em></h2>
-        <div className="contact-rows reveal reveal-d2">
-          {t.contact.rows.map((r,i)=>{
-            const inner = (<><span className="k">{r.k}</span><span className="v">{r.v} {r.href && <span className="arrow">↗</span>}</span></>);
-            return r.href
-              ? <a className="crow" href={r.href} target="_blank" rel="noopener noreferrer" key={i}>{inner}</a>
-              : <div className="crow" key={i}>{inner}</div>;
-          })}
+        <div className="contact-icons reveal reveal-d2">
+          {links.map((r,i)=>(
+            <a className="cicon" key={i} href={r.href} target="_blank" rel="noopener noreferrer"
+               aria-label={contactLabel(r.href,r.k)+": "+r.v} title={contactLabel(r.href,r.k)+" · "+r.v}>
+              <ContactIcon href={r.href}/>
+              <span className="cicon-cap">{contactLabel(r.href,r.k)}</span>
+            </a>
+          ))}
         </div>
+        {plain.length>0 && (
+          <div className="contact-loc reveal reveal-d2">
+            {plain.map((r,i)=><span key={i}>{r.v}</span>)}
+          </div>
+        )}
         <div className="reveal reveal-d3" style={{marginTop:46}}>
           <a href="cv.html" className="btn btn-solid">{t.nav.cv} <span>↓</span></a>
         </div>
