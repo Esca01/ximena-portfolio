@@ -533,3 +533,8 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
   .crow .v{ white-space:normal; overflow-wrap:anywhere; }
   .meter .top{ flex-wrap:wrap; }
 }
+
+@media(max-width:380px){
+  .hero-avatar{ width:84px; height:84px; }
+  .hero-namerow h1{ font-size:clamp(40px,12vw,48px); }
+}
