@@ -10,11 +10,13 @@ function readableOn(hex){
 window.XM.applyAppearance();
 window.XM.applyTheme();
 
-function ThemeToggle(){
+function ThemeToggle({ lang }){
   const [dark, setDark] = useState(window.XM.loadTheme()==="dark");
   function flip(){ const t=window.XM.toggleTheme(); setDark(t==="dark"); }
+  const label = (lang==="en") ? "Toggle theme" : "Cambiar tema";
+  const titleText = dark ? (lang==="en" ? "Light mode" : "Modo claro") : (lang==="en" ? "Dark mode" : "Modo oscuro");
   return (
-    <button className="theme-tog" onClick={flip} title={dark?"Modo claro":"Modo oscuro"} aria-label="Tema">
+    <button className="theme-tog" onClick={flip} title={titleText} aria-label={label}>
       {dark
         ? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
         : <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4 7 7 0 1 0 20 14.5z"/></svg>}
@@ -74,10 +76,10 @@ function Nav({ t, lang, setLang }){
         <a href="#contact" onClick={close}>{t.nav.contact}</a>
         <a href="cv.html" className="cv-btn" onClick={close}>{t.nav.cv} <span>↓</span></a>
         <div className="lang">
-          <button className={lang==="es"?"on":""} onClick={()=>setLang("es")}>ES</button>
-          <button className={lang==="en"?"on":""} onClick={()=>setLang("en")}>EN</button>
+          <button className={lang==="es"?"on":""} aria-pressed={lang==="es"} onClick={()=>setLang("es")}>ES</button>
+          <button className={lang==="en"?"on":""} aria-pressed={lang==="en"} onClick={()=>setLang("en")}>EN</button>
         </div>
-        <ThemeToggle/>
+        <ThemeToggle lang={lang}/>
       </div>
     </nav>
   );
@@ -112,7 +114,7 @@ function Hero({ t }){
                 <span className="ln"><span><em>{t.hero.last}</em></span></span>
               </h1>
               <div className="hero-avatar fade f1">
-                <img src={window.XM.photoUrl() || "photo-placeholder.svg"} alt="Ximena Córdoba"
+                <img src={window.XM.photoUrl() || "photo-placeholder.svg"} alt="Retrato de Ximena Córdoba, Ingeniera Industrial" aria-hidden="true"
                   onError={(e)=>{ if(e.currentTarget.src.indexOf("photo-placeholder.svg")<0) e.currentTarget.src="photo-placeholder.svg"; }}/>
               </div>
             </div>
@@ -136,6 +138,7 @@ function Hero({ t }){
             <div className="portrait">
               <image-slot id="ximena-portrait" shape="rect" fit="cover"
                 src={window.XM.photoUrl() || "photo-placeholder.svg"}
+                alt="Retrato de Ximena Córdoba, Ingeniera Industrial"
                 placeholder="Ximena Córdoba"></image-slot>
             </div>
             <div className="palette-strip" aria-hidden="true">
@@ -366,7 +369,7 @@ function Contact({ t }){
           {t.contact.rows.map((r,i)=>{
             const inner = (<><span className="k">{r.k}</span><span className="v">{r.v} {r.href && <span className="arrow">↗</span>}</span></>);
             return r.href
-              ? <a className="crow" href={r.href} target="_blank" rel="noopener" key={i}>{inner}</a>
+              ? <a className="crow" href={r.href} target="_blank" rel="noopener noreferrer" key={i}>{inner}</a>
               : <div className="crow" key={i}>{inner}</div>;
           })}
         </div>
