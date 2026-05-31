@@ -46,7 +46,8 @@
     const s = document.documentElement.style;
     s.setProperty('--serif', `'${a.display}', Georgia, serif`);
     s.setProperty('--sans', `'${a.body}', system-ui, sans-serif`);
-    paletteArr(a).forEach((c,i)=> s.setProperty(PAL_VARS[i], c));
+    const dark = loadTheme() === 'dark';
+    paletteArr(a).forEach((c,i)=> s.setProperty(PAL_VARS[i], dark ? 'color-mix(in srgb, '+c+' 65%, white)' : c));
   }
 
   /* ---- content ---- */
@@ -62,7 +63,7 @@
   function loadTheme(){ return localStorage.getItem('xm-theme') === 'dark' ? 'dark' : 'light'; }
   function saveTheme(t){ localStorage.setItem('xm-theme', t); }
   function applyTheme(t){ t = t || loadTheme(); document.documentElement.setAttribute('data-theme', t); return t; }
-  function toggleTheme(){ const t = loadTheme()==='dark' ? 'light' : 'dark'; saveTheme(t); applyTheme(t); return t; }
+  function toggleTheme(){ const t = loadTheme()==='dark' ? 'light' : 'dark'; saveTheme(t); applyTheme(t); applyAppearance(); return t; }
 
   /* ---- admin auth (server-validated, session-scoped) ---- */
   function adminKey(){ return sessionStorage.getItem('xm-admin-key') || ''; }
