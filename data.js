@@ -36,6 +36,7 @@ window.DATA = {
             "Análisis del comportamiento de productos y categorías para potenciar ventas.",
             "Seguimiento de facturas y monitoreo mensual de presupuesto frente al gasto ejecutado.",
             "Participación en mesas de trabajo para definir nuevos procesos y reestructurar modelos.",
+            "Actualización de políticas, procedimientos e instructivos.",
           ],
         },
         {
@@ -48,6 +49,7 @@ window.DATA = {
             "Análisis de datos sobre consumo de medicamentos y dispositivos médicos para clientes internos y externos.",
             "Liderazgo de proyectos estratégicos con seguimiento de cronogramas y alertas oportunas.",
             "Coordinación de reuniones efectivas y mejoras continuas para resultados óptimos.",
+            "Consolidación y presentación de la gestión gerencial mensual.",
           ],
         },
         {
@@ -70,6 +72,7 @@ window.DATA = {
             "Sistema de archivo efectivo para auditorías internas y externas.",
             "Documentación actualizada para la auditoría de certificación del Sistema de Gestión Integrado.",
             "Informe del estado documental e identificación de documentos en trámite y antiguos.",
+            "Identificación de documentos con antigüedad superior a 3 años y actualización de bases de datos del personal.",
           ],
         },
         {
@@ -165,6 +168,7 @@ window.DATA = {
             "Analyzing product and category behavior to boost sales.",
             "Tracking invoices and monthly budget vs. actual spend monitoring.",
             "Active participation in working groups to define new processes and restructure models.",
+            "Updated policies, procedures and work instructions.",
           ],
         },
         {
@@ -177,6 +181,7 @@ window.DATA = {
             "Analyzing data on medication and medical device consumption for internal and external clients.",
             "Leading strategic projects with schedule tracking and timely alerts.",
             "Coordinating effective meetings and continuous improvements for optimal results.",
+            "Consolidated and presented monthly managerial reporting.",
           ],
         },
         {
@@ -199,6 +204,7 @@ window.DATA = {
             "Effective filing system for internal and external audits.",
             "Updated documentation for the Integrated Management System certification audit.",
             "Report on documentary status, identifying pending and outdated documents.",
+            "Flagged documents over 3 years old and kept personnel databases up to date.",
           ],
         },
         {
