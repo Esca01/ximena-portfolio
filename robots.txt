@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://ximena-portfolio-steel.vercel.app/sitemap.xml
