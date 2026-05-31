@@ -9,6 +9,7 @@
     "dev": "vercel dev"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.4.0"
   },
   "devDependencies": {
