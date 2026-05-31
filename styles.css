@@ -351,8 +351,8 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
 .skill-block h4{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:24px; display:flex; align-items:center; gap:10px; }
 .skill-block h4 .dab{ width:13px; height:13px; }
 .meter{ margin-bottom:22px; }
-.meter .top{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:13px; }
-.meter .name{ font-size:16px; font-weight:500; line-height:1.3; white-space:nowrap; }
+.meter .top{ display:flex; justify-content:space-between; align-items:baseline; gap:20px; margin-bottom:13px; }
+.meter .name{ font-size:16px; font-weight:500; line-height:1.3; }
 .meter .lvl{ font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); white-space:nowrap; flex:none; text-align:right; }
 .meter .track{ height:6px; border-radius:999px; background:var(--paper-deep); overflow:hidden; }
 .meter .fill{ height:100%; width:0; border-radius:999px; transition:width 1.1s var(--ease-out); }
@@ -526,4 +526,5 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
 @media(max-width:560px){
   .crow{ flex-direction:column; align-items:flex-start; gap:6px; }
   .crow .v{ white-space:normal; overflow-wrap:anywhere; }
+  .meter .top{ flex-wrap:wrap; }
 }
