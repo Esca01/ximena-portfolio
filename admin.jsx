@@ -171,7 +171,7 @@ function PhotoUploader({ lang, photo, onChange }){
           </button>
           {photo && <button className="abtn danger" type="button" disabled={busy} onClick={()=>onChange("")}>{lang==="es"?"Quitar":"Remove"}</button>}
         </div>
-        <div className="hint">{lang==="es"?"Foto de perfil de la página principal. Arrástrala o haz clic. Pulsa Guardar para publicarla para todos.":"Main-site profile photo. Drag or click. Click Save to publish it for everyone."}</div>
+        <div className="hint">{lang==="es"?"Foto de perfil de la página principal. Arrástrala o haz clic; se publica al instante para todos.":"Main-site profile photo. Drag or click; it publishes instantly for everyone."}</div>
         {err && <div className="xphoto-err">{err}</div>}
       </div>
       <input ref={inp} type="file" accept="image/png,image/jpeg,image/webp,image/avif" style={{display:"none"}}
@@ -240,9 +240,17 @@ function Admin({ onLogout }){
     }
   }
   function setPhoto(url){
-    setAppear(a=>({ ...a, photo:url })); setDirty(true);
-    flash(url ? (lang==="es"?"Foto lista — pulsa Guardar para publicarla":"Photo ready — click Save to publish")
-              : (lang==="es"?"Foto quitada — pulsa Guardar":"Photo removed — click Save"));
+    const next = { ...appear, photo:url };
+    setAppear(next);
+    // The image is already uploaded to Blob — publish right away so it applies
+    // for everyone (no separate Save needed for the photo).
+    XM.saveData(draft); XM.saveAppearance(next); setDirty(false);
+    XM.saveRemote({ data:draft, appearance:next })
+      .then(()=> flash(url ? (lang==="es"?"✓ Foto publicada para todos":"✓ Photo published for everyone")
+                           : (lang==="es"?"Foto quitada":"Photo removed")))
+      .catch(err=>{ setDirty(true); flash(err && err.status===401
+        ? (lang==="es"?"Sesión expirada. Vuelve a iniciar sesión.":"Session expired. Log in again.")
+        : (lang==="es"?"Foto subida — pulsa Guardar":"Photo uploaded — click Save")); });
   }
   function resetAll(){
     if(!window.confirm(lang==="es"?"¿Restablecer TODO a los valores originales? Se perderán los cambios guardados.":"Reset EVERYTHING to defaults? Saved changes will be lost.")) return;

@@ -469,7 +469,14 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
    RESPONSIVE NAV
    ====================================================== */
 @media(max-width:900px){
-  .hero-grid{ grid-template-columns:1fr; }
-  .portrait-wrap{ display:none; }
-  .nav-links{ display:none; }
+  /* stack the hero, and SHOW the portrait/photo (it was hidden before) */
+  .hero-grid{ grid-template-columns:1fr; gap:40px; }
+  .portrait-wrap{ display:block; justify-self:center; }
+  /* the floating paint dabs were overlapping the text and CTAs on narrow screens */
+  .hero-dabs{ display:none; }
+  /* keep the nav usable on mobile: drop the in-page section links + CV button
+     (the CV is also linked from the Contact section), but keep the language
+     and theme toggles, which have no other access point */
+  .nav-links{ display:flex; gap:14px; }
+  .nav-links a{ display:none; }
 }

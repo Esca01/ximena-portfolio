@@ -291,6 +291,14 @@
       // naturalWidth/Height aren't known until load — re-apply so the cover
       // baseline is computed from real dimensions, not the 100%×100% fallback.
       this._img.addEventListener('load', () => this._applyView());
+      // If the image URL fails to load (deleted/stale blob), fall back to the
+      // empty placeholder instead of leaving a broken image in the frame.
+      this._img.addEventListener('error', () => {
+        if (!this._img.getAttribute('src')) return;
+        this._img.style.display = 'none';
+        this._empty.style.display = 'flex';
+        this.removeAttribute('data-filled');
+      });
       // Gated on editable + fit=cover so share links and contain/fill slots
       // stay static.
       this.addEventListener('dblclick', (e) => {
