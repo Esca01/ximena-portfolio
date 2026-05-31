@@ -4,8 +4,6 @@
    + calidez de un estudio de pintura.
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Playfair+Display:ital,wght@0,400..700;1,400..600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Serif+Display:ital@0;1&family=Archivo:wght@300;400;500;600;700&family=Karla:wght@300;400;500;600;700&family=Mulish:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap');
-
 :root{
   /* --- Lienzo / papel --- */
   --paper:        #F3ECDF;
