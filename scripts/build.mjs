@@ -19,3 +19,16 @@ await build({
 });
 
 console.log(`Compiled ${entryPoints.join(', ')} -> .js`);
+
+// Build analytics bundle with @vercel/analytics
+await build({
+  entryPoints: { 'analytics-bundle': 'analytics.js' },
+  outdir: '.',
+  bundle: true,
+  minify: true,
+  target: ['es2019'],
+  format: 'iife',
+  logLevel: 'info',
+});
+
+console.log('Compiled analytics-bundle.js (bundled with @vercel/analytics)');
