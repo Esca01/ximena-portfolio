@@ -27,7 +27,7 @@ window.DATA = {
       jobs:[
         {
           role:"Analista Venta al Público", company:"Outsourcing Farmacéutico Integral S.A.S",
-          dates:"Ene 2025 — Actualidad", badge:"Actual",
+          dates:"Ene 2025 — Actualidad",
           summary:"Identifico tendencias y evalúo resultados comerciales para apoyar la toma de decisiones estratégicas y optimizar márgenes.",
           bullets:[
             "Identificación de tendencias y líneas de trabajo para apoyar decisiones estratégicas.",
@@ -159,14 +159,14 @@ window.DATA = {
       jobs:[
         {
           role:"Retail Sales Analyst", company:"Outsourcing Farmacéutico Integral S.A.S",
-          dates:"Jan 2025 — Present", badge:"Current",
+          dates:"Jan 2025 — Present",
           summary:"I identify trends and evaluate commercial results to support strategic decisions and optimize margins.",
           bullets:[
             "Identifying trends and work streams to support strategic decision-making.",
             "Evaluating commercial results and proposing strategies to improve key indicators.",
             "Monitoring discounts on sales and designing action plans to optimize margins.",
             "Analyzing product and category behavior to boost sales.",
-            "Tracking invoices and monthly budget vs. actual spend monitoring.",
+            "Tracking invoices and monitoring monthly budget vs. actual spend.",
             "Active participation in working groups to define new processes and restructure models.",
             "Updated policies, procedures and work instructions.",
           ],
