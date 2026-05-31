@@ -326,7 +326,7 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
 .exp .role{ }
 .exp .role h3{ font-family:var(--serif); font-weight:500; font-size:clamp(20px,2.4vw,29px); line-height:1.08; letter-spacing:-.01em; }
 .exp .role .company{ margin-top:8px; font-size:15px; color:var(--ink-soft); }
-.exp .role .dates{ margin-top:10px; font-family:var(--mono); font-size:12px; letter-spacing:.04em; color:var(--ink-faint); display:flex; align-items:center; gap:8px; }
+.exp .role .dates{ margin-top:10px; font-family:var(--mono); font-size:12px; letter-spacing:.04em; color:var(--ink-faint); display:flex; align-items:center; gap:8px; font-variant-numeric:lining-nums tabular-nums; }
 .exp .role .badge{ display:inline-block; margin-top:16px; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; padding:5px 12px; border-radius:999px; background:var(--accent,var(--terracotta)); color:#fff; }
 .exp .detail{ }
 .exp .summary{ color:var(--ink-soft); font-size:15.5px; line-height:1.65; text-wrap:pretty; }
@@ -433,7 +433,7 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
 }
 .crow:hover{ padding-left:14px; }
 .crow .k{ font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint); }
-.crow .v{ font-size:clamp(17px,2.4vw,26px); font-family:var(--serif); display:flex; align-items:center; gap:14px; white-space:nowrap; }
+.crow .v{ font-size:clamp(17px,2.4vw,26px); font-family:var(--serif); display:flex; align-items:center; gap:14px; white-space:nowrap; font-variant-numeric:lining-nums tabular-nums; }
 .crow .k{ flex:none; }
 .crow .v .arrow{ opacity:0; transform:translateX(-8px); transition:opacity .3s, transform .3s; color:var(--terracotta); }
 .crow:hover .v .arrow{ opacity:1; transform:translateX(0); }
