@@ -472,6 +472,8 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
    RESPONSIVE NAV
    ====================================================== */
 @media(max-width:900px){
+  .section{ padding-block:clamp(48px,7vh,80px); }
+
   /* on mobile, replace the big arch portrait with a small circular avatar
      placed to the RIGHT of the name, and compact the hero to remove dead space */
   .hero{ min-height:auto; align-items:flex-start; padding-top:112px; padding-bottom:54px; }
