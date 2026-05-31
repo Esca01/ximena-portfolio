@@ -301,7 +301,7 @@ function Languages({ t }){
   return (
     <section className="section" id="langs">
       <div className="wrap">
-        <div className="eyebrow reveal"><span className="num">{t.langs.num}</span> {t.langs.title}</div>
+        <div className="eyebrow reveal"><span className="num">{t.langs.num}</span></div>
         <h2 className="section-title reveal reveal-d1" style={{marginTop:18, marginBottom:54}}>{t.langs.title}</h2>
         <div className="lang-grid">
           {t.langs.items.map((l,i)=>(
