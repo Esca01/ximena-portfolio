@@ -115,7 +115,7 @@ window.DATA = {
     certs: {
       num:"06", title:"Certificaciones", subtitle:"Educación informal y cursos",
       items:[
-        { yr:"2011", deg:"Inglés · Nivel B1", school:"Centro Cultural Colombo Americano", note:"Certificación" },
+        { yr:"2011", deg:"Inglés — certificación nivel B1 (2011)", school:"Centro Cultural Colombo Americano", note:"Certificación" },
       ],
     },
     hobbies: { label:"Fuera del trabajo", items:["Senderismo","Fotografía","Pintura","Baile","Voleibol","Lectura","Amante de los perros"] },
@@ -244,7 +244,7 @@ window.DATA = {
     certs: {
       num:"06", title:"Certifications", subtitle:"Informal education & courses",
       items:[
-        { yr:"2011", deg:"English · Level B1", school:"Centro Cultural Colombo Americano", note:"Certification" },
+        { yr:"2011", deg:"English — B1 certification (2011)", school:"Centro Cultural Colombo Americano", note:"Certification" },
       ],
     },
     hobbies: { label:"Off the clock", items:["Hiking","Photography","Painting","Dancing","Volleyball","Reading","Dog lover"] },
