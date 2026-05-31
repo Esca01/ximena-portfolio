@@ -398,6 +398,27 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
 .edu .deg h3{ font-family:var(--serif); font-weight:500; font-size:clamp(20px,2.4vw,28px); line-height:1.1; }
 .edu .deg .school{ margin-top:7px; font-size:15px; color:var(--ink-soft); }
 .edu .note{ font-family:var(--mono); font-size:12px; color:var(--ink-faint); letter-spacing:.04em; }
+/* clickable record (certs with a URL) → opens modal */
+.edu.is-link{ width:100%; text-align:left; font:inherit; color:inherit; background:none; border:none; border-bottom:1px solid var(--line); cursor:pointer; }
+.rec-view{ display:inline-block; margin-left:10px; color:var(--terracotta); font-family:var(--mono); font-size:11px; letter-spacing:.08em; opacity:0; transform:translateX(-6px); transition:opacity .3s var(--ease), transform .3s var(--ease); }
+.edu.is-link:hover .rec-view, .edu.is-link:focus-visible .rec-view{ opacity:1; transform:none; }
+@media(hover:none){ .rec-view{ opacity:.85; transform:none; } }
+
+/* certification modal */
+.cert-modal{ position:fixed; inset:0; z-index:120; display:flex; align-items:center; justify-content:center; padding:clamp(14px,4vw,40px); background:color-mix(in srgb,#000 55%, transparent); backdrop-filter:blur(4px); animation:certfade .25s var(--ease); }
+@keyframes certfade{ from{opacity:0} to{opacity:1} }
+.cert-panel{ width:min(940px,100%); max-height:90vh; display:flex; flex-direction:column; background:var(--paper); border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:0 40px 90px -30px rgba(0,0,0,.6); }
+.cert-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; padding:18px 22px; border-bottom:1px solid var(--line); }
+.cert-t{ font-family:var(--serif); font-weight:500; font-size:20px; line-height:1.2; }
+.cert-s{ font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-faint); margin-top:5px; }
+.cert-x{ flex:none; width:40px; height:40px; border-radius:50%; border:1px solid var(--line); color:var(--ink-soft); display:inline-flex; align-items:center; justify-content:center; transition:background .25s, color .25s, border-color .25s; }
+.cert-x:hover{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.cert-stage{ flex:1; min-height:0; background:var(--paper-2); display:flex; align-items:center; justify-content:center; }
+.cert-stage iframe{ width:100%; height:70vh; border:0; display:block; }
+.cert-stage img{ width:100%; height:auto; max-height:78vh; object-fit:contain; }
+.cert-empty{ padding:60px 30px; font-family:var(--mono); font-size:13px; color:var(--ink-faint); text-align:center; }
+.cert-foot{ padding:16px 22px; border-top:1px solid var(--line); display:flex; justify-content:flex-end; }
+@media(max-width:560px){ .cert-stage iframe{ height:60vh; } }
 
 @media(max-width:760px){ .edu{ grid-template-columns:1fr; gap:8px; } }
 

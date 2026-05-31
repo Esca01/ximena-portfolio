@@ -223,6 +223,7 @@ function Admin({ onLogout }){
   const setField  = (sec,key,val)=> mutate(c=>{ c[lang][sec][key]=val; });
   const listSet   = (path,i,key,val)=> mutate(c=>{ getArr(c[lang],path)[i][key]=val; });
   const listSetA  = (path,i,key,arr)=> mutate(c=>{ getArr(c[lang],path)[i][key]=arr; });
+  const listSetBoth = (path,i,key,val)=> mutate(c=>{ ["es","en"].forEach(L=>{ const a=getArr(c[L],path); if(a[i]) a[i][key]=val; }); });
   const listAdd   = (path,blank)=> mutate(c=>{ ["es","en"].forEach(L=>getArr(c[L],path).push(clone(blank))); });
   const listDel   = (path,i)=> mutate(c=>{ ["es","en"].forEach(L=>getArr(c[L],path).splice(i,1)); });
   const listMove  = (path,i,dir)=> mutate(c=>{ ["es","en"].forEach(L=>{ const a=getArr(c[L],path); const j=i+dir; if(j<0||j>=a.length)return; const t=a[i]; a[i]=a[j]; a[j]=t; }); });
@@ -470,6 +471,7 @@ function Admin({ onLogout }){
                 </div>
                 <Field label={lang==="es"?"Certificación / curso":"Certification / course"} value={it.deg} onChange={v=>listSet(["certs","items"],i,"deg",v)}/>
                 <Field label={lang==="es"?"Institución":"Institution"} value={it.school} onChange={v=>listSet(["certs","items"],i,"school",v)}/>
+                <Field label={lang==="es"?"URL del certificado (página o Google Drive) — se abre en un modal":"Certificate URL (page or Google Drive) — opens in a modal"} value={it.url} onChange={v=>listSetBoth(["certs","items"],i,"url",v)}/>
               </React.Fragment>
             )}
           />

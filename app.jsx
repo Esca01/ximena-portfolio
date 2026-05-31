@@ -320,7 +320,45 @@ function Languages({ t }){
 }
 
 /* ---------------- EDUCATION + CERTS (shared) ---------------- */
+/* turn a certificate URL into an embeddable source (Google Drive → preview, image, or iframe) */
+function certEmbed(url){
+  if(!url) return null;
+  const drive = url.match(/drive\.google\.com\/file\/d\/([^/?#]+)/) || (/drive\.google\.com/.test(url) ? url.match(/[?&]id=([^&]+)/) : null);
+  if(drive) return { type:"iframe", src:`https://drive.google.com/file/d/${drive[1]}/preview` };
+  if(/\.(png|jpe?g|webp|gif|avif)(\?|#|$)/i.test(url)) return { type:"img", src:url };
+  return { type:"iframe", src:url };
+}
+function CertModal({ item, onClose }){
+  useEffect(()=>{
+    const onKey = e => { if(e.key==="Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow; document.body.style.overflow="hidden";
+    return ()=>{ document.removeEventListener("keydown", onKey); document.body.style.overflow=prev; };
+  },[]);
+  const emb = certEmbed(item.url);
+  return (
+    <div className="cert-modal" role="dialog" aria-modal="true" aria-label={item.deg} onClick={onClose}>
+      <div className="cert-panel" onClick={e=>e.stopPropagation()}>
+        <div className="cert-head">
+          <div className="cert-meta"><div className="cert-t">{item.deg}</div><div className="cert-s">{item.school} · {item.yr}</div></div>
+          <button className="cert-x" onClick={onClose} aria-label="Cerrar">✕</button>
+        </div>
+        <div className="cert-stage">
+          {emb
+            ? (emb.type==="img"
+                ? <img src={emb.src} alt={item.deg}/>
+                : <iframe src={emb.src} title={item.deg} loading="lazy" allow="autoplay"></iframe>)
+            : <div className="cert-empty">Sin documento adjunto.</div>}
+        </div>
+        <div className="cert-foot">
+          <a href={item.url} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Abrir original <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  );
+}
 function RecordList({ data, id }){
+  const [open, setOpen] = useState(null);
   return (
     <section className="section" id={id}>
       <div className="wrap">
@@ -328,15 +366,20 @@ function RecordList({ data, id }){
         <h2 className="section-title reveal reveal-d1" style={{marginTop:18}}>{data.title}</h2>
         {data.subtitle && <div className="section-sub reveal reveal-d1">{data.subtitle}</div>}
         <div className="edu-list" style={{marginTop:46}}>
-          {data.items.map((e,i)=>(
-            <div className="edu reveal" style={{transitionDelay:`${.07*i}s`,"--accent":PAL_ARR[i%PAL_ARR.length]}} key={i}>
+          {data.items.map((e,i)=>{
+            const style = {transitionDelay:`${.07*i}s`,"--accent":PAL_ARR[i%PAL_ARR.length]};
+            const inner = (<React.Fragment>
               <div className="yr">{e.yr}</div>
               <div className="deg"><h3>{e.deg}</h3><div className="school">{e.school}</div></div>
-              <div className="note">{e.note}</div>
-            </div>
-          ))}
+              <div className="note">{e.note}{e.url && <span className="rec-view">Ver ↗</span>}</div>
+            </React.Fragment>);
+            return e.url
+              ? <button type="button" className="edu reveal is-link" style={style} key={i} onClick={()=>setOpen(e)} aria-haspopup="dialog">{inner}</button>
+              : <div className="edu reveal" style={style} key={i}>{inner}</div>;
+          })}
         </div>
       </div>
+      {open && <CertModal item={open} onClose={()=>setOpen(null)}/>}
     </section>
   );
 }
