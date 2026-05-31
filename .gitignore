@@ -26,3 +26,4 @@ docs/superpowers/
 
 # Test artifacts
 .playwright-mcp/
+.env*
