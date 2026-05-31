@@ -1,0 +1,28 @@
+# Dependencias
+node_modules/
+
+# Vercel
+.vercel
+
+# Variables de entorno — NUNCA subir secretos
+.env
+.env.*
+!.env.example
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Artefacto del runtime de diseño (no aplica en producción)
+.image-slots.state.json
+
+# Documentos fuente privados (no forman parte del sitio publicado)
+*.pdf
+CV_Ximena_Cordoba.md
+
+# Notas internas de planificación
+docs/superpowers/
+
+# Test artifacts
+.playwright-mcp/

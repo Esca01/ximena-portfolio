@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="760" viewBox="0 0 600 760" role="img" aria-label="Foto de perfil — Ximena Córdoba">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3ece1"/>
+      <stop offset="1" stop-color="#e7dccb"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="760" fill="url(#bg)"/>
+  <!-- soft shoulders + head silhouette -->
+  <circle cx="300" cy="300" r="118" fill="#d8c7ac"/>
+  <path d="M120 760c0-120 80-205 180-205s180 85 180 205z" fill="#d8c7ac"/>
+  <!-- oil-paint dabs -->
+  <path d="M86 120c20 3 36 16 33 35-3 19-22 27-39 24-17-3-31-17-28-36 3-18 17-26 34-23z" fill="#C5552F" opacity="0.92"/>
+  <path d="M512 168c16 2 30 13 27 29-3 16-19 22-33 20-14-3-25-15-23-29 3-15 16-22 29-20z" fill="#2C5E7E" opacity="0.9"/>
+  <path d="M515 612c15 2 27 13 25 28-2 15-18 22-31 19-13-2-24-15-22-28 3-15 16-21 28-19z" fill="#4E7B55" opacity="0.9"/>
+  <path d="M96 632c13 2 24 12 22 25-2 14-16 20-28 17-12-2-21-13-19-25 2-13 14-19 25-17z" fill="#DCA02E" opacity="0.92"/>
+  <!-- monogram -->
+  <text x="300" y="438" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-style="italic" fill="#8a6f4e" opacity="0.55">XC</text>
+</svg>

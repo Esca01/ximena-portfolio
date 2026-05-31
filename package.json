@@ -1,0 +1,17 @@
+{
+  "name": "ximena-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portafolio profesional bilingüe de Ximena Córdoba — con panel de administración y persistencia global vía Vercel Blob.",
+  "scripts": {
+    "compile": "node scripts/build.mjs",
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.4.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  }
+}
