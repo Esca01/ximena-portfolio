@@ -44,7 +44,7 @@ function CV(){
 
       <div className="sheet">
         <header className="ats-head">
-          <h1>{t.hero.first} {t.hero.last}</h1>
+          <h1>{t.hero.fullName}</h1>
           <div className="role">{t.hero.role.join("  |  ")}</div>
           <div className="ats-contact">
             {t.contact.rows.map((r,i)=>(

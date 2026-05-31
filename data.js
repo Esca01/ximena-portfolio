@@ -6,7 +6,7 @@ window.DATA = {
     nav: { about:"Sobre mí", work:"Experiencia", skills:"Competencias", edu:"Educación", certs:"Certificaciones", contact:"Contacto", cv:"Descargar CV" },
     hero: {
       eyebrow:"Portafolio · 2026",
-      first:"Ximena", last:"Córdoba",
+      first:"Ximena", last:"Córdoba", fullName:"Ximena Andrea Córdoba Castro",
       role:["Ingeniera Industrial","Análisis de datos","Gestión de procesos"],
       lede:"Especializada en la gestión eficiente de información y recursos. Combino el rigor del análisis con una mirada creativa: convierto datos en decisiones y procesos en resultados.",
       cta1:"Ver experiencia", cta2:"Contactar",
@@ -138,7 +138,7 @@ window.DATA = {
     nav: { about:"About", work:"Experience", skills:"Skills", edu:"Education", certs:"Certifications", contact:"Contact", cv:"Download CV" },
     hero: {
       eyebrow:"Portfolio · 2026",
-      first:"Ximena", last:"Córdoba",
+      first:"Ximena", last:"Córdoba", fullName:"Ximena Andrea Córdoba Castro",
       role:["Industrial Engineer","Data analysis","Process management"],
       lede:"Specialized in the efficient management of information and resources. I pair analytical rigor with a creative eye: turning data into decisions and processes into results.",
       cta1:"View experience", cta2:"Get in touch",
