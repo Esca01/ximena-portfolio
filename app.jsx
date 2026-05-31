@@ -251,7 +251,7 @@ function Skills({ t }){
   return (
     <section className="section" id="skills">
       <div className="wrap">
-        <div className="eyebrow reveal"><span className="num">{t.skills.num}</span> {t.skills.title} {t.skills.titleEm}</div>
+        <div className="eyebrow reveal"><span className="num">{t.skills.num}</span> {t.skills.title}</div>
         <h2 className="section-title reveal reveal-d1" style={{marginTop:18, marginBottom:60}}>
           {t.skills.title} <em>{t.skills.titleEm}</em>
         </h2>
@@ -325,7 +325,7 @@ function RecordList({ data, id }){
   return (
     <section className="section" id={id}>
       <div className="wrap">
-        <div className="eyebrow reveal"><span className="num">{data.num}</span> {data.title}</div>
+        <div className="eyebrow reveal"><span className="num">{data.num}</span></div>
         <h2 className="section-title reveal reveal-d1" style={{marginTop:18}}>{data.title}</h2>
         {data.subtitle && <div className="section-sub reveal reveal-d1">{data.subtitle}</div>}
         <div className="edu-list" style={{marginTop:46}}>
@@ -363,7 +363,7 @@ function Contact({ t }){
   return (
     <section className="section contact" id="contact">
       <div className="wrap">
-        <div className="eyebrow reveal"><span className="num">{t.contact.num}</span> {t.contact.title} {t.contact.titleEm}</div>
+        <div className="eyebrow reveal"><span className="num">{t.contact.num}</span> {t.contact.title}</div>
         <h2 className="big reveal reveal-d1" style={{marginTop:24}}>{t.contact.title} <em>{t.contact.titleEm}</em></h2>
         <div className="contact-rows reveal reveal-d2">
           {t.contact.rows.map((r,i)=>{
