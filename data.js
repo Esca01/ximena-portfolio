@@ -18,7 +18,7 @@ window.DATA = {
       lead:"Una profesional <em>versátil</em> que une la precisión de la ingeniería con la sensibilidad del detalle.",
       p1:"Ingeniera Industrial especializada en la gestión eficiente de información y recursos. Me destaco por mi adaptabilidad y habilidades de liderazgo, combinadas con una comunicación efectiva y una fuerte capacidad para trabajar en equipo.",
       p2:"Manejo múltiples tareas con una actitud comprometida y una gran atención al detalle. Mi enfoque es dinámico, proactivo y entusiasta, destacándome en el servicio al cliente con sólidos conocimientos digitales.",
-      traits:["Liderazgo","Adaptabilidad","Trabajo en equipo","Comunicación efectiva","Organización","Gestión de proyectos","Análisis de datos","Resolución de conflictos","Administración de recursos","Atención al detalle"],
+      traits:["Análisis de datos","Gestión de procesos","Calidad y normatividad","Gestión de la información","Gestión de proyectos"],
     },
     work: {
       num:"02", title:"Experiencia", titleEm:"laboral",
@@ -150,7 +150,7 @@ window.DATA = {
       lead:"A <em>versatile</em> professional uniting engineering precision with a sensitivity for detail.",
       p1:"Industrial Engineer specialized in the efficient management of information and resources. I stand out for my adaptability and leadership skills, combined with effective communication and a strong ability to work in teams.",
       p2:"I handle multiple tasks with a committed attitude and great attention to detail. My approach is dynamic, proactive and enthusiastic, excelling at customer service with solid digital skills.",
-      traits:["Leadership","Adaptability","Teamwork","Effective communication","Organization","Project management","Data analysis","Conflict resolution","Resource management","Attention to detail"],
+      traits:["Data analysis","Process management","Quality & compliance","Information management","Project management"],
     },
     work: {
       num:"02", title:"Work", titleEm:"experience",
