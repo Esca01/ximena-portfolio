@@ -22,7 +22,7 @@ window.DATA = {
     },
     work: {
       num:"02", title:"Experiencia", titleEm:"laboral",
-      meta:"Más de una década\nconstruyendo procesos",
+      meta:"+6 años en gestión de procesos, calidad y análisis de datos en el sector farmacéutico.",
       expand:"Leer responsabilidades", collapse:"Ocultar",
       jobs:[
         {
@@ -151,7 +151,7 @@ window.DATA = {
     },
     work: {
       num:"02", title:"Work", titleEm:"experience",
-      meta:"Over a decade\nbuilding processes",
+      meta:"6+ years in process management, quality and data analysis in the pharmaceutical sector.",
       expand:"Read responsibilities", collapse:"Hide",
       jobs:[
         {
