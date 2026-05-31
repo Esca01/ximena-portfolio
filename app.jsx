@@ -99,15 +99,17 @@ function Hero({ t }){
       <div className="wrap">
         <div className="hero-grid">
           <div className="hero-text">
-            <div className="hero-avatar fade f1">
-              <img src={window.XM.photoUrl() || "photo-placeholder.svg"} alt="Ximena Córdoba"
-                onError={(e)=>{ if(e.currentTarget.src.indexOf("photo-placeholder.svg")<0) e.currentTarget.src="photo-placeholder.svg"; }}/>
-            </div>
             <div className="hero-eyebrow fade f1">{t.hero.eyebrow}<Dab color={PAL["--ochre"]} i={1} style={{width:12,height:12}}/></div>
-            <h1>
-              <span className="ln"><span>{t.hero.first}</span></span>
-              <span className="ln"><span><em>{t.hero.last}</em></span></span>
-            </h1>
+            <div className="hero-namerow">
+              <h1>
+                <span className="ln"><span>{t.hero.first}</span></span>
+                <span className="ln"><span><em>{t.hero.last}</em></span></span>
+              </h1>
+              <div className="hero-avatar fade f1">
+                <img src={window.XM.photoUrl() || "photo-placeholder.svg"} alt="Ximena Córdoba"
+                  onError={(e)=>{ if(e.currentTarget.src.indexOf("photo-placeholder.svg")<0) e.currentTarget.src="photo-placeholder.svg"; }}/>
+              </div>
+            </div>
             <div className="hero-role fade f2">
               {t.hero.role.map((r,i)=>(
                 <React.Fragment key={i}>

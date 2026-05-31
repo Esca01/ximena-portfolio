@@ -473,12 +473,16 @@ button{ font-family:inherit; cursor:pointer; border:none; background:none; color
    ====================================================== */
 @media(max-width:900px){
   /* on mobile, replace the big arch portrait with a small circular avatar
-     shown right above the name (cleaner on phones) */
+     placed to the RIGHT of the name, and compact the hero to remove dead space */
+  .hero{ min-height:auto; align-items:flex-start; padding-top:112px; padding-bottom:54px; }
+  .scroll-hint{ display:none; }
   .hero-grid{ grid-template-columns:1fr; }
   .portrait-wrap{ display:none; }
+  .hero-namerow{ display:flex; align-items:center; gap:16px; }
+  .hero-namerow h1{ flex:1 1 auto; min-width:0; }
   .hero-avatar{
-    display:block; width:96px; height:96px; border-radius:50%; overflow:hidden;
-    margin-bottom:22px; border:2px solid var(--paper);
+    display:block; flex:none; width:84px; height:84px; border-radius:50%; overflow:hidden;
+    border:2px solid var(--paper);
     box-shadow:0 0 0 1.5px var(--terracotta), 0 14px 30px -14px rgba(36,31,26,.4);
     background:linear-gradient(160deg,var(--paper-2),var(--paper-deep));
   }
